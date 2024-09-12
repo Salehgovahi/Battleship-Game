@@ -11,6 +11,7 @@ int main()
     int xBattle , yBattle;
     char direction;
 
+    printf("\nHello\n");
     printf("Welcome \n");
     printf("Enter a number : ");
 
@@ -106,14 +107,14 @@ int main()
     for (i = 1 ; i<=battlesNumber ; i++){
         scanf("%d %d %c", &xBattle , &yBattle , &direction );
         if (direction=='h'){
-            board1[xBattle][yBattle]=1;
-            board1[xBattle+1][yBattle]=1;
-            board1[xBattle-1][yBattle]=1;
+            board1[xBattle][yBattle]=254;
+            board1[xBattle+1][yBattle]=254;
+            board1[xBattle-1][yBattle]=254;
         }
         if (direction=='v'){
-            board1[xBattle][yBattle]=1;
-            board1[xBattle][yBattle-1]=1;
-            board1[xBattle][yBattle+1]=1;
+            board1[xBattle][yBattle]=254;
+            board1[xBattle][yBattle-1]=254;
+            board1[xBattle][yBattle+1]=254;
         }
         if ((battlesNumber-i) != 0){
             printf("\nPlayer1 | remaining battle : %d\n",(battlesNumber-i) );
@@ -131,14 +132,14 @@ int main()
     for (i = 1 ; i<=battlesNumber ; i++){
         scanf("%d %d %c", &xBattle , &yBattle , &direction );
         if (direction=='h'){
-            board2[xBattle][yBattle]=1;
-            board2[xBattle+1][yBattle]=1;
-            board2[xBattle-1][yBattle]=1;
+            board2[xBattle][yBattle]=254;
+            board2[xBattle+1][yBattle]=254;
+            board2[xBattle-1][yBattle]=254;
         }
         if (direction=='v'){
-            board2[xBattle][yBattle]=1;
-            board2[xBattle][yBattle-1]=1;
-            board2[xBattle][yBattle+1]=1;
+            board2[xBattle][yBattle]=254;
+            board2[xBattle][yBattle-1]=254;
+            board2[xBattle][yBattle+1]=254;
         }
         if ((battlesNumber-i) != 0){
             printf("\nPlayer2 | remaining battle : %d\n",(battlesNumber-i) );
@@ -163,6 +164,9 @@ int main()
                     }
                 printf("~ ");
                 }
+                else if(board1[i][j]==254){
+                  printf("%c ", board1[i][j]);
+                }
                 else{
                     printf("%d ", board1[i][j]);
                 }
@@ -185,6 +189,9 @@ int main()
                         printf(" ");
                     }
                     printf("~ ");
+                }
+                else if(board2[i][j]==254){
+                    printf("%c ", board2[i][j]);
                 }
                 else{
                     printf("%d ", board2[i][j]);
